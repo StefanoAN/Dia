@@ -1,0 +1,54 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: url('Foto.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    transition: background-color 1s;
+}
+
+.card {
+    width: 35%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 1s, background-color 1s, box-shadow 1s;
+}
+
+#lyrics {
+    font-size: 1.5em;
+    line-height: 1.6;
+    color: #222; /* Color oscuro para mejor visibilidad */
+}
+
+.card:hover {
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.play-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.play-button:hover {
+    background-color: #0056b3;
+}
+
+.finished {
+    background: #fff;
+    color: #000;
+}
