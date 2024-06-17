@@ -34,25 +34,16 @@ body {
     z-index: -1;
 }
 
-.card {
-    width: 35%;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.7);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    border-radius: 20px;
-    text-align: center;
-    transition: transform 1s, background-color 1s, box-shadow 1s;
-}
-
 #lyrics {
-    font-size: 1.5em;
+    font-size: 1.3em; /* Tamaño de fuente un poco más pequeño */
     line-height: 1.6;
     color: #000; /* Color de texto */
-}
-
-.card:hover {
-    background: rgba(0, 0, 0, 0.8);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 1s, background-color 1s, box-shadow 1s;
 }
 
 .play-button {
