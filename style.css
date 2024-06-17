@@ -39,11 +39,6 @@ body {
     line-height: 1.6;
     color: #000; /* Color de texto */
     text-align: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 1s, background-color 1s, box-shadow 1s;
 }
 
 .play-button {
@@ -66,3 +61,4 @@ body {
     background: #fff;
     color: #000;
 }
+
