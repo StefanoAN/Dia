@@ -9,15 +9,48 @@ const lyrics = [
     { text: "Yo soy tu sangre, mi viejo,\nsoy tu silencio y tu tiempo.\n\nViejo, mi querido viejo,\nte digo: ¡Feliz día Papá Oscar!", duration: 12 }
 ];
 
+const images = [
+    'Foto.jpeg',
+    'Foto1.jpeg',
+    'Foto2.jpeg',
+    'Foto3.jpeg',
+    'Foto4.jpeg',
+    'Foto5.jpeg',
+    'Foto6.jpeg',
+    'Foto7.jpeg',
+    'Foto8.jpeg'
+];
+
+const backgroundImages = ['Foto.jpeg', 'Foto1.jpeg', 'Foto5.jpeg', 'Foto6.jpeg'];
+
 let currentLyricIndex = 0;
 const lyricElement = document.getElementById('lyrics');
 const audio = document.getElementById('background-audio');
 const playButton = document.getElementById('play-button');
+const bodyElement = document.body;
+const backgroundContainer = document.getElementById('background-container');
 
 function displayNextLyric() {
     if (currentLyricIndex < lyrics.length) {
+        const imageUrl = images[currentLyricIndex + 1];
+
+        if (backgroundImages.includes(imageUrl)) {
+            bodyElement.style.backgroundImage = `url(${imageUrl})`;
+            bodyElement.style.backgroundSize = 'cover';
+            backgroundContainer.innerHTML = '';
+        } else {
+            bodyElement.style.backgroundImage = '';
+            const imgElement = document.createElement('img');
+            imgElement.src = imageUrl;
+            imgElement.className = 'background-image';
+            backgroundContainer.innerHTML = '';
+            backgroundContainer.appendChild(imgElement);
+        }
+
         lyricElement.innerText = lyrics[currentLyricIndex].text;
+
         const duration = lyrics[currentLyricIndex].duration * 1000; // Convertir a milisegundos
+
         currentLyricIndex++;
         const card = document.getElementById('card');
         card.style.transform = 'scale(1.1)';
@@ -32,7 +65,7 @@ function displayNextLyric() {
 }
 
 function getRandomColor() {
-    const colors = ['rgba(255, 173, 173, 0.7)', 'rgba(255, 214, 165, 0.7)', 'rgba(253, 255, 182, 0.7)', 'rgba(202, 255, 191, 0.7)', 'rgba(155, 246, 255, 0.7)', 'rgba(160, 196, 255, 0.7)', 'rgba(189, 178, 255, 0.7)', 'rgba(255, 198, 255, 0.7)'];
+    const colors = ['#FF6347', '#FFD700', '#20B2AA', '#FF69B4', '#00BFFF', '#7B68EE', '#FF8C00', '#00FF7F']; // Colores llamativos
     return colors[Math.floor(Math.random() * colors.length)];
 }
 
