@@ -52,12 +52,11 @@ function displayNextLyric() {
         const duration = lyrics[currentLyricIndex].duration * 1000; // Convertir a milisegundos
 
         currentLyricIndex++;
-        const card = document.getElementById('card');
-        card.style.transform = 'scale(1.1)';
+        lyricElement.style.transform = 'scale(1.1)';
         setTimeout(() => {
-            card.style.transform = 'scale(1)';
+            lyricElement.style.transform = 'scale(1)';
         }, 500);
-        card.style.backgroundColor = getRandomColor();
+        lyricElement.style.backgroundColor = getRandomColor();
         setTimeout(displayNextLyric, duration);
     } else {
         document.body.classList.add('finished');
@@ -74,3 +73,4 @@ playButton.addEventListener('click', () => {
     playButton.style.display = 'none';
     setTimeout(displayNextLyric, 7000); // Espera de 7 segundos antes de mostrar las letras
 });
+
