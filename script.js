@@ -52,20 +52,10 @@ function displayNextLyric() {
         const duration = lyrics[currentLyricIndex].duration * 1000; // Convertir a milisegundos
 
         currentLyricIndex++;
-        lyricElement.style.transform = 'scale(1.1)';
-        setTimeout(() => {
-            lyricElement.style.transform = 'scale(1)';
-        }, 500);
-        lyricElement.style.backgroundColor = getRandomColor();
         setTimeout(displayNextLyric, duration);
     } else {
         document.body.classList.add('finished');
     }
-}
-
-function getRandomColor() {
-    const colors = ['#FF6347', '#FFD700', '#20B2AA', '#FF69B4', '#00BFFF', '#7B68EE', '#FF8C00', '#00FF7F']; // Colores llamativos
-    return colors[Math.floor(Math.random() * colors.length)];
 }
 
 playButton.addEventListener('click', () => {
